@@ -13,8 +13,10 @@ namespace Tyuiu.DmiterkoKD.Sprint2.Task6.V12.Test
         {
             DataService ds = new DataService();
 
-            Assert.AreEqual("9 12 2024", ds.FindDateOfPreviousDay(10, 12, 2024));
-            Assert.AreEqual("29 2 2024", ds.FindDateOfPreviousDay(1, 3, 2024));
+            Assert.AreEqual("2024 12 9", ds.FindDateOfPreviousDay(2024, 12, 10));
+            Assert.AreEqual("2024 7 31", ds.FindDateOfPreviousDay(2024, 8, 1));
+            Assert.AreEqual("2023 12 31", ds.FindDateOfPreviousDay(2024, 1, 1));
+
 
             Assert.Throws<ArgumentException>(() =>
             {
