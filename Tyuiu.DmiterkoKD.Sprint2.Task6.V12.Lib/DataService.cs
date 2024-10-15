@@ -17,61 +17,42 @@ namespace Tyuiu.DmiterkoKD.Sprint2.Task6.V12.Lib
                 case 12:
                     daysinm = 31;
                     break;
+                case 2:
+                    day = 29;
+                    break;
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    daysinm = 30;
-                    break;
-                case 2:
-                    daysinm = 29;
+                    day = 30;
                     break;
                 default:
                     throw new ArgumentException($"Месяц должен быть от 1 до 12. Значение {m}");
             }
             if (n>1 & n <= daysinm)
+            if (n > 1 & n <= day)
             {
+                n = n - 1;
                 string g1 = g.ToString();
+
+
+                string n1 = n.ToString();
                 string m1 = m.ToString();
-                int d = n - 1;
-                string n1 = d.ToString();
-                string res = g1 + " " + m1+ " " + n1;
-                return res;
+                string n2;
+                if (n1.Length == 1)
+                {
+                    n2 = "0" + n1;
+
             }
             else
             {
-                if (n==1 & m > 1)
-                {
-                    int d;
-                    switch (m-1)
-                    {
-                        case 1:
-                        case 3:
-                        case 5:
-                        case 7:
-                        case 8:
-                        case 10:
-                        case 12:
-                            d = 31;
-                            break;
-                        case 4:
-                        case 6:
-                        case 9:
-                        case 11:
-                            d = 30;
-                            break;
-                        case 2:
-                            d = 29;
-                            break;
+                    n2 = n1;
                         
                     }
-                    string g1 = g.ToString();
-                    int m1 = m - 1;
-                    string m2 = m1.ToString();
-                    
-                    string d1 = daysinm.ToString();
-                    string res = g1 + " " + m2 + " " + d1;
-                    return res;
+                string m2;
+                if (m1.Length == 1)
+                {
+                    m2 = "0" + m1;
                     
                 }
                 else
